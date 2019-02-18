@@ -1,5 +1,6 @@
 # [Asynchronous Javasript (From Udacity)](https://classroom.udacity.com/nanodegrees/nd019/parts/c5795c43-ebd1-4da9-8af9-db1c95ccf9e4)
 
+[Udacity Repo](https://github.com/udacity/course-ajax). Master and solutions branchs.
 Ajax: Maje a request, and don't wait for the results and move to something else.
 Now is a conecpt that hasn't got much to do with the original acronysm
 
@@ -105,4 +106,38 @@ jQuery has a number of other methods that can be used to make asynchronous calls
 - .post()
 - .load()
 
-## Ajax with Fetch
+## Ajax with Fetch API
+
+How in modern JS and browsers we can do things outselves without loading an external library
+like JQuery keeping things simple. This is the fetch API.
+
+Fetch is a new API that was built to make requesting resources (primarily across a network) a whole lot easier. Is better thatn XHR as it is promise-based.
+
+(If the browser doesn't support fetch, we can use pollifyl ([npm fetch package](https://github.com/github/fetch)))
+
+[Mozilla docs for fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
+
+Now the query is very easy:
+
+```javascript
+fetch(https://api.unsplash.com/search/photos?page=1&query=${searchedForText}, {
+    headers: {
+        Authorization: 'Client-ID abc123'
+    },
+    method: '{METHOD}'
+});
+```
+
+To have the example working review the `index.html` file and make sure that the script
+loaded is the one named `3-ajax-with-fetch-api.js`.
+
+```javascript
+<!-- <script src="1-ajax-with-xhr.js"></script> -->
+<!-- <script src="2-ajax-with-jquery.js"></script> -->
+<script src="3-ajax-with-fetch-api.js"></script>
+```
+
+This Response object is new with the Fetch API and is what's returned when a Fetch request resolves.
+It doesn't have any of the data that we searched for! That's because a response object has information about the response itself,
+it doesn't have the data...yet. To actually get the data, we need to get the "body" of the response, this is with .json(). So we need
+to chain 2 then callbacks together
