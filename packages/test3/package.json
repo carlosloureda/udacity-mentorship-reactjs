@@ -1,0 +1,10 @@
+{
+  "name": "test3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "test1": "^1.0.0",
+    "test2": "^1.0.0"
+   }
+}
