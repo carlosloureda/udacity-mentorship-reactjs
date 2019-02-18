@@ -1,0 +1,10 @@
+{
+  "name": "asynchronous-js",
+  "version": "1.0.0",
+  "description": "Package for learning about asynchronous javascript for React Udacity Nanodegree",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
