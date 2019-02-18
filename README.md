@@ -8,9 +8,9 @@
 yarn add global lerna
 lerna init
 
-## Asynchronous Javasript (From Udacity):https://classroom.udacity.com/nanodegrees/nd019/parts/c5795c43-ebd1-4da9-8af9-db1c95ccf9e4
+## [Asynchronous Javasript (From Udacity)](https://classroom.udacity.com/nanodegrees/nd019/parts/c5795c43-ebd1-4da9-8af9-db1c95ccf9e4)
 
-See package Asynchronous Javascript
+See package [Asynchronous Javascript](/packages/asynchronous-js/README.md)
 
 ## Javascript chrome dev tools
 
