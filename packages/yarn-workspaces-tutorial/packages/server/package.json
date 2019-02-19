@@ -1,0 +1,9 @@
+{
+  "name": "@aceituna/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@aceituna/common": "1.0.0"
+  }
+}

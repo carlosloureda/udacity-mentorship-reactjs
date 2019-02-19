@@ -12,7 +12,13 @@ lerna init
 
 See package [Asynchronous Javascript](/packages/asynchronous-js/README.md)
 
+## CLient-Server configuration Javascript
+
+## React Fundamentals
+
 ## Javascript chrome dev tools
+
+## [Yarn workspaces](/packages/yarn-workspaces-tutorial/README.md)
 
 <!-- TODO: -->
 
