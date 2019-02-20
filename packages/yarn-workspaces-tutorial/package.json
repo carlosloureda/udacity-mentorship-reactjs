@@ -1,0 +1,7 @@
+{
+  "name": "aceituna",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
