@@ -3,7 +3,7 @@
 Project name: @aceituna.
 
 ## Basic structure to hold 2 packages in the same project.
-
+Configuration for [yarn workspaces](yarn config set workspaces-experimental true), run `yarn config set workspaces-experimental true`
 (First commit)
 
 Create a folder for the project `yarn-workspaces-tutorial`, add a private package.json and 2
