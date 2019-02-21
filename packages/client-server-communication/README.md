@@ -190,3 +190,29 @@ more effectively. Also we can reuse the headers, so reaching several servers in 
 Check the [Service Workers Course](https://eu.udacity.com/course/offline-web-applications--ud899)
 
 # 5. Security
+
+Besides HTTP/2 adds several security improvements, we need to be aware of some good practices to keep our work safe.
+
+
+## Origins
+origin: schema (http), host(www.udacity.com), port(80)
+
+You can't do fetch request to another requets, well maybe you can but can't read the response :). Also can't see code in iFrames from other origins.
+This is the `same origin policy`. Of course there are exceptions to this rules
+
+
+You can see this in this [example](/example_origins.html)
+
+Of course we want to let people access our site if we are building an API, for this to work we can use a banch of HTML headers called the `CORS` _(Cross Origin Resource Sharing)_. Some old techiques where JSONP (JSON with padding), returns the script data (adds a function for the callback).
+
+## CORS
+Allows servers a set of origins allowed to access the resources. This is great with "preflighted" requests, they first send an HTTP request by the OPTIONS method to the resource on the other domain, in order to determine whether the actual request is safe to send. Cross-site requests are preflighted like this since they may have implications to user data.
+[More on preflight requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests)
+
+## Security Exploit - CSRF
+This security error appears in the form, I don't care what the servers responds, a bad person can set up a website that forges a request of the same URL the form uses and set the parameters so that the money is wired to thar person (in a bank website ...) This kind of attacks is called `Cross-site request forgery` or `CSRF`.
+
+CRSF is token put on the form that is stored on the server and only responds if the tokens match. It is as easy as opening a website to play a game and on button click just throw the request without the user getting to know.
+
+## Security Exploit - XSS
+This is related to User's input. Not checking for what the user inserts in the form creates an exploit called `XSS` _(`Cross-site scripting`)_. So we need to validate the user's input always on server side!
