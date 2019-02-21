@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interacting with requests</title>
+</head>
+
+<body>
+    <!--  same origin script -->
+    <script id="same-origin">var something = "hai";</script>
+
+    <!-- other origin script -->
+    <script id="other-origin" defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+    <h1>Open inpector console to see results</h1>
+</body>
+
+<script>
+    // same origin
+    console.log("Same origin: ", document.querySelector("#same-origin").textContent);
+
+    // other origin
+    console.log("Other Origin: ", document.querySelector("#other-origin").textContent)
+</script>
+
+</html>
