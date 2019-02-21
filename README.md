@@ -1,5 +1,8 @@
 # Monorepository for Udacity Mentorship program with several things
 
+This project mixes lerna for some packages and there are some other packages that have packages inside managed by yarn.
+It won't be working as a complete Lerna monorepository but we will be able to track all the progress for learning JS Stack from an unique repository with all the attempts and later the interesting things will go to a 'js-boilerplate' repository.
+
 ## Install lerna, yarn spaces for several projects inside this repository
 
 [Monorepo blog](https://blog.kaleidos.net/2018/11/20/Monorepos-con-Lerna/)
@@ -13,10 +16,15 @@ lerna init
 See package [Asynchronous Javascript](/packages/asynchronous-js/README.md)
 
 ## [Client Server Communication - Udacity](https://classroom.udacity.com/nanodegrees/nd019/parts/a6fb0c7c-5ae4-4c2f-95b3-64052a6b825e)
-
 See package [Client Server Communication](/packages/client-server-communication/README.md)
 
+## React Fundamentals
+
 ## Javascript chrome dev tools
+
+## [Yarn workspaces](/packages/yarn-workspaces-tutorial/README.md)
+
+## [TypeScript](/packages/typescript/README.md)
 
 <!-- TODO: -->
 
