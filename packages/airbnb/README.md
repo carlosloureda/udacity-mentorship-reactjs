@@ -71,3 +71,29 @@ yarn add typescript @types/node @types/react @types/react-dom @types/jest
 I had some problems with `jest` configuration, as web and server had different versions, I just removed all the `node_modules/` and updated `/server/package.json` to point to a newwe version of jest as right now I don't know how to have 2 versions of the same package inside a yarn workspaces project.
 
 Test the web with `yarn start` to see if it works.
+
+
+## Step 2 - Adding React Apollo and React Router
+
+We will be using Apollo Client 2.0, which comes with Apollo Boost:
+Apollo Boost is a great way to get started with Apollo Client quickly, but there are some advanced features it doesn’t support out of the box. If you’d like to use subscriptions, swap out the Apollo cache, or add an existing Apollo Link to your network stack that isn’t already included, you will have to set Apollo Client up manually.
+
+So for using subscriptions (hell yeah! :)) let’s walk through how to migrate off of Apollo Boost.
+
+So we are going to do the manual installation:
+```
+yarn add apollo-client apollo-cache-inmemory apollo-link-http apollo-link-error apollo-link
+yarn add react-apollo graphql-tag graphql
+```
+
+Now we set up apollo in [apollo.ts](/packages/web/src/apollo.ts)
+
+[**WIP**/NOTE]: As we are using create-react-app with typescript and on the tutorial they use other things, here i didn't have either `tsconfig.json` or `tslint.json` and I added them but thing they are not working, so I will need to revisit this when the project continues.
+Also I have a tslint.json on the root folder and later on the folders I am extending it so we don't have things duplicated.
+
+Installing the react router but need to install the typescript types
+
+```
+yarn add react-router-dom
+yarn add -D @types/react-router-dom
+```
