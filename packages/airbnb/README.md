@@ -97,3 +97,20 @@ Installing the react router but need to install the typescript types
 yarn add react-router-dom
 yarn add -D @types/react-router-dom
 ```
+
+
+## Step 3 - Formik & Ant-design, Froms & Design
+
+Why we called the Register component as a RegisterConnector, we will have something like:
+// container --> view
+The view shows the information and the container manages how the information is represented, as we want to reuse React & React Native we will have a container -> connector -> view, so the `connector` will decide what view to show, if we show the React or the React Native view. Yikes!
+
+
+### Ant-design
+
+```yarn add antd```
+
+We will be using Formik instead of the HOC provided by ant desgin
+
+Once we create a basic register/login form with ant-design we add formik ```yarn add formik```
+Both libraries work with typescript built-in, Formik requires to have the field names in the form inputs
