@@ -148,4 +148,14 @@ Now we add the dependencies to web adn server and run ```yarn install``` on the 
 
 ## Step 6 - Symplifying a React form with the Formik Field Component
 Field component doesn't need to be passed any handler like onChange or onBlur and other stuff.
-This component is going to go on the `modules/shared`folder.
+This component is going to go on the `modules/shared` folder.
+
+## Step 7 - Adding a Controller Package to share code between React & React Native
+Remember the 'connector' for gluing the container and the view ? We are going to put this code in a `controller` package. We don't use this in `common` package because the server won't use this connectors.
+
+We add some dependencies
+
+```
+yarn add react react-dom
+yarn add -D @types/node @types/react @types/react-dom tslint typescript tslint-config-prettier
+```
