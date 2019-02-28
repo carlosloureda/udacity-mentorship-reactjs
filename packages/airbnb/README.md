@@ -114,3 +114,20 @@ We will be using Formik instead of the HOC provided by ant desgin
 
 Once we create a basic register/login form with ant-design we add formik ```yarn add formik```
 Both libraries work with typescript built-in, Formik requires to have the field names in the form inputs
+
+## Step 4 - Form validation in Formik with Yup
+Yup lets as specify the format of things.
+We are going to copy de yup validator for the emails from our already built server.
+
+```
+yarn add yup
+yarn add -D @types/yup
+```
+We create a validation schema, once we passed it to Formik we have available 'touched'  and `errors` on the props.
+
+With formik we can listen for touched fields and errors (so validation errors dont appear on blank forms) and show the
+help with:
+
+```javascript
+<FormItem help={touched.email && errors.email ? errors.email: ""}>
+```
