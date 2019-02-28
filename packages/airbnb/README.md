@@ -145,3 +145,7 @@ We create a user.ts file witht the schemas inside common/yupSchemas folder and e
 
 //TODO: build code automatically in the future ...
 Now we add the dependencies to web adn server and run ```yarn install``` on the root folder.
+
+## Step 6 - Symplifying a React form with the Formik Field Component
+Field component doesn't need to be passed any handler like onChange or onBlur and other stuff.
+This component is going to go on the `modules/shared`folder.
