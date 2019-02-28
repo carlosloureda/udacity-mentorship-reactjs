@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@app/web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,13 +7,11 @@
     "@types/node": "^11.9.4",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
-    "antd": "^3.13.6",
     "apollo-cache-inmemory": "^1.4.3",
     "apollo-client": "^2.4.13",
     "apollo-link": "^1.2.8",
     "apollo-link-error": "^1.1.7",
     "apollo-link-http": "^1.5.11",
-    "formik": "^1.5.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "react": "^16.8.2",
@@ -22,7 +20,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "typescript": "^3.3.3",
-    "yup": "^0.26.10"
+    "antd": "^3.6.2",
+    "formik": "^0.11.11",
+    "@abb/common": "1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +41,6 @@
   ],
   "devDependencies": {
     "@types/react-router-dom": "^4.3.1",
-    "@types/yup": "^0.26.10"
+    "@types/yup": "^0.24.6"
   }
 }

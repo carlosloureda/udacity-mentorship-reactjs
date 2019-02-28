@@ -131,3 +131,17 @@ help with:
 ```javascript
 <FormItem help={touched.email && errors.email ? errors.email: ""}>
 ```
+
+## Step 5 - Sharing validation code in Server & Client (common package)
+We create a new package `@abb/common` with some packages:
+
+```
+yarn add -D typescript tslint tslint-config-prettier
+yarn add yup
+yarn add -D @types/yup
+```
+
+We create a user.ts file witht the schemas inside common/yupSchemas folder and export it from root common index.ts file, we add the scripts in package.json so we can build the ts files in a dist/ folder, build the code and see what happens.
+
+//TODO: build code automatically in the future ...
+Now we add the dependencies to web adn server and run ```yarn install``` on the root folder.
