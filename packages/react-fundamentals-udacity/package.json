@@ -1,0 +1,7 @@
+{
+  "name": "@rnp/react-fundamentals-udacity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Package for learning about react fundamentals for React Udacity Nanodegree"
+}
