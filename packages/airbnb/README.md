@@ -159,3 +159,18 @@ We add some dependencies
 yarn add react react-dom
 yarn add -D @types/node @types/react @types/react-dom tslint typescript tslint-config-prettier
 ```
+
+## Step 8 - Calling the Register Mutation
+We set some tweaks for server testing being passed and uncommment the email sending when registering an user.
+We will be using `sparkpost` account:
+ - Skip domain name
+ - Use API
+
+We set the API_KEY in a .env file (copy .env.example and rename it and fill it)
+
+For adding Register feature on the `controller`, we add some other packages:
+
+```
+yarn add react-apollo graphql-tag graphql
+```
+WE eill work on the RegisterController/index.tsx. We will add the mutation, and the ChildMutateProps taken from react apollo.
