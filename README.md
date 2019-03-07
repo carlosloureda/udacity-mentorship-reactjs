@@ -26,6 +26,9 @@ See package [Client Server Communication](/packages/client-server-communication/
 
 ## [TypeScript](/packages/typescript/README.md)
 
+## [React FrontEndNanodegree notes](/packages/frontend-nanodegree/README.md)
+Head to this part to go deeper into basics for building a site as udacity does!
+
 <!-- TODO: -->
 
 - [JavaScript Debugging Reference](https://developers.google.com/web/tools/chrome-devtools/javascript/reference)
