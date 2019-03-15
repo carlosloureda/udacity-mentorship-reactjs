@@ -48,6 +48,11 @@ At this point, just focus on these two tags:
 
 Another tool: [HTML Validator](https://validator.w3.org)
 
+#### Problem set 1
+Available at [index.html](./index.html)
+
+#### Mockup exercise
+
 
 ### Animal Trading Cards
 
