@@ -1,5 +1,30 @@
 [
   {
+    "name": "production",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "airbnb_user",
+    "password": "123456",
+    "database": "graphql-ts-server-boilerplate",
+    "synchronize": true,
+    "logging": true,
+    "entities": [
+      "src/entity/**/*.js"
+    ],
+    "migrations": [
+      "src/migration/**/*.js"
+    ],
+    "subscribers": [
+      "src/subscriber/**/*.js"
+    ],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
     "name": "development",
     "type": "postgres",
     "host": "localhost",
