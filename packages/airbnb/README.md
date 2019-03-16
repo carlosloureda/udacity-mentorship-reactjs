@@ -194,3 +194,37 @@ Now in our RegisterController we can set the other 2 props (RegisterMutation, Re
 React.PureComponent<ChildMutateProps<Props, RegisterMutation, RegisterMutationVariables>>
 
 For building app with yarn build I dan to remove the __generated__ on root :(
+
+# Step 10 - How to put a Yarn Workspace in a Docker Image
+We are going to deploy de server, it is tricky to deploy apps with yarn workspaces. Vamos
+a hacerlo con imagenes de docker.
+
+Como usamos TS tenemos que crear el build de JS para el server. Pero al hacer el build no se están moviendo los archivos graphql :(, asi que lo tenemos que copiar
+mejor hacerlo con el paquete copyFiles
+
+```
+yarn add -D copyfiles rimraf
+```
+
+So our new build script is:
+
+```
+"build": "rimraf src && tsc && copyfiles src/**/*.graphql dist"
+```
+
+Rimraf is a package that need to be in the installation folder so in this case as the common and server packages also use this package it is breaking so we need to use
+the "noHoist" option in the root package so rimraf is installed in every folder.
+
+
+copyfiles -u 1 # moves one level up to not copy the src. Now things are good
+
+For those who are new to Docker: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+Run the DockerFile with this command: `sudo docker build -t carlos/airbnb:1.0.0 .`
+```
+sudo docker run -p 3001:4000  --net="host" -d carlos/airbnb:1.0.0"
+```
+
+(Remember to start redis) the  --net="host is for the redis/sql ??? I think this is to give access to my computer so docker at default cant access outsite resources
+
+# Step 11 - Deploying a TS Server to Digital Ocean with Dokku
