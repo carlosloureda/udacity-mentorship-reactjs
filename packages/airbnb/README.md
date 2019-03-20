@@ -226,5 +226,3 @@ sudo docker run -p 3001:4000  --net="host" -d carlos/airbnb:1.0.0"
 ```
 
 (Remember to start redis) the  --net="host is for the redis/sql ??? I think this is to give access to my computer so docker at default cant access outsite resources
-
-# Step 11 - Deploying a TS Server to Digital Ocean with Dokku
