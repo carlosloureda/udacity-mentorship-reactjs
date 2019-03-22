@@ -127,6 +127,7 @@ We don't declare a `.addEventListener()` we just say that we want to run the `ac
 
 ## Rendering UI with React
 
+Here we go into the contacts app example so go to the `reactnd-contacts-md-1` branch
 ## State management
 
 ## Rendering UI with External Data
