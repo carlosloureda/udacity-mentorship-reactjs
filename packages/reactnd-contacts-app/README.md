@@ -29,3 +29,9 @@ user: props.user
 }
 
 - Now we see how to update the state.
+
+The benefits of Controlled Components are:
+
+instant input validation
+conditionally disable/enable buttons
+enforce input formats
