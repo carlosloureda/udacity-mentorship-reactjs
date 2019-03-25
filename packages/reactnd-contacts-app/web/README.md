@@ -41,3 +41,23 @@ If your React component’s render() function renders the same result given the 
 Life cycle events part: https://classroom.udacity.com/nanodegrees/nd019/parts/57812373-5147-4152-a4f7-d2e164aba8a5/modules/7778e6bd-7868-47d0-8536-cfcbe4e29f19/lessons/a34ba863-12fd-4c7b-8062-a9881ebdb763/concepts/99997308-de29-4709-be62-3b7c38b780c3
 
 https://reactjs.org/docs/react-component.html#the-component-lifecycle
+
+## React Router
+
+SPA definition
+
+React Router
+
+React Router turns React projects into single-page applications. It does this by providing a number of specialized components that manage the creation of links, manage the app's URL, provide transitions when navigating between different URL locations, and so much more.
+
+#### Browser Router
+
+Listen for changes on the URl and shows the proper screen when URL changes
+
+#### The Link Component
+
+The way the user navigates through the app
+
+#### Route Component
+
+If the path matches an URL it takes to the correct screen
