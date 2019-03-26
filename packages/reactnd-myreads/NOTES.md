@@ -88,3 +88,9 @@ Step 6:
 - Move Books from shelf
 
 Step 7: Add search books
+
+> Optimistic UI ...
+
+    https://medium.com/@_erikaybar/optimistic-ui-updates-in-react-9e139ffa2e45
+
+> Transitions

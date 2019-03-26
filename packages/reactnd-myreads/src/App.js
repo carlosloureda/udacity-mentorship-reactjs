@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 import "./App.css";
 class BooksApp extends React.Component {
   state = {
-    books: [],
     shelfs: {
       currentlyReading: [],
       wantToRead: [],
@@ -15,12 +14,61 @@ class BooksApp extends React.Component {
     }
   };
 
+  // Factory function to help onShelfChange
+  changeBookFromShelFactory = (shelf, book) => {
+    return currenState => {
+      let shelfMovedFrom = currenState.shelfs[book.shelf].filter(
+        bookInShelf => bookInShelf.id !== book.id
+      );
+      let shelfMovedTo =
+        shelf !== "none" ? currenState.shelfs[shelf].concat([book]) : null;
+
+      // if (revert) {
+      //   shelfMovedTo = currenState.shelfs[book.shelf].filter(
+      //     bookInShelf => bookInShelf.id !== book.id
+      //   );
+      //   shelfMovedFrom = currenState.shelfs[shelf].concat([book]);
+      // }
+      return {
+        shelfs: {
+          ...currenState.shelfs,
+          [shelf]:
+            shelf !== shelfMovedTo ? shelfMovedTo : currenState.shelfs[shelf],
+          [book.shelf]: shelfMovedFrom
+        }
+      };
+    };
+  };
+  // to avoid double editing ...
+  shelfChangeRequestPending = false;
+  onShelfChange = (event, book) => {
+    const shelfMovedTo = event.target.value;
+    console.log("shelfMovedTo: ", shelfMovedTo);
+    if (shelfMovedTo !== book.shelf) {
+      // TODO: make a better optimistic UI than 'oldState'
+      let oldState = this.state;
+      if (this.shelfChangeRequestPending) {
+        return;
+      }
+
+      this.setState(this.changeBookFromShelFactory(shelfMovedTo, book));
+      this.shelfChangeRequestPending = true;
+      BooksAPI.update(book, shelfMovedTo)
+        .then(() => (this.shelfChangeRequestPending = false))
+        .catch(err => {
+          this.setState(
+            // this.changeBookFromShelFactory(shelfMovedTo, book, true)
+            { shelfs: oldState.shelfs }
+          );
+        });
+    }
+  };
+
   componentDidMount = () => {
     BooksAPI.getAll()
       .then(books => {
+        /* We dont need a books object as they are on different shelfs */
         this.setState({
-          /* TODO: books might not be needed */
-          books: books,
           shelfs: {
             currentlyReading: books.filter(
               book => book.shelf === "currentlyReading"
@@ -56,12 +104,18 @@ class BooksApp extends React.Component {
                   <BookShelf
                     books={shelfs.currentlyReading}
                     shelfName="Currently Reading"
+                    onShelfChange={this.onShelfChange}
                   />
                   <BookShelf
                     books={shelfs.wantToRead}
                     shelfName="Want to Read"
+                    onShelfChange={this.onShelfChange}
                   />
-                  <BookShelf books={shelfs.read} shelfName="Read" />
+                  <BookShelf
+                    books={shelfs.read}
+                    shelfName="Read"
+                    onShelfChange={this.onShelfChange}
+                  />
                 </div>
               </div>
               <div className="open-search">
