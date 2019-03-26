@@ -36,6 +36,25 @@ subtitle: "A Complete Introduction",
 title: "The Linux Command Line",
 }
 
+Basic:
+
+{
+imageLinks: {
+smallThumbnail:
+"http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api"
+},
+shelf: "currentlyReading",
+subtitle: "A Complete Introduction",
+title: "The Linux Command Line",
+ratingsCount: 2,
+allowAnonLogging: true,
+averageRating: 4,
+authors: ["William E. Shotts, Jr."],
+categories: ["COMPUTERS"],
+language: "en",
+pageCount: 480
+},
+
 This are the endpoints:
 
 Welcome to the Book Lender API!
@@ -51,3 +70,21 @@ Welcome to the Book Lender API!
     GET /books/:id
     PUT /books/:id { shelf }
     POST /search { query, maxResults }
+
+Step 3:
+
+- Divide starter code into components
+
+Step 4:
+
+- Add Router
+
+Step 5:
+
+- Load books from API
+
+Step 6:
+
+- Move Books from shelf
+
+Step 7: Add search books
