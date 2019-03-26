@@ -102,10 +102,32 @@ making our code reusable should always be one of our goals.
 My next article will be about composing asynchronous functions. I thought I could fit it all into a single article, but this page got long quickly. So let’s just stop it here. Subscribe so you do not miss out on Part 2!
 
 
+### Declarative Code
+
+Imperative code from the dictionary means: `expressing a command; commanding`.
+When JavaScript code is written imperatively, we tell JavaScript exactly what to do and how to do it.
+
+For example in react, imperative work is a `for ... lop`and a declarative work would be `map` function.
+
+React is declarative because we write the code that we want, and React is in charge of taking our declared code and performing all of the JavaScript/DOM steps to get us to our desired result.
+
+For example, in:
+
+```jsx
+<button onClick={activateTeleporter}>Activate Teleporter</button>
+```
+We don't declare a `.addEventListener()` we just say that we want to run the `activateTeleporter` function to run when the button is clicked.
+
+#### Further research
+
+- [Tyler's Imperative vs Declarative Programming blog post](https://tylermcginnis.com/imperative-vs-declarative-programming/)
+
+- [Difference between declarative and imperative in React.js? from StackOverflow](https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js)
 
 
 ## Rendering UI with React
 
+Here we go into the contacts app example so go to the `reactnd-contacts-md-1` branch
 ## State management
 
 ## Rendering UI with External Data
