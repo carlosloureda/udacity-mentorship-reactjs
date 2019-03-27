@@ -18,7 +18,10 @@ export default class Book extends Component {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url("${book.imageLinks.smallThumbnail}")`
+              backgroundImage:
+                book &&
+                book.imageLinks &&
+                `url("${book.imageLinks.smallThumbnail}")`
             }}
           />
           <div className="book-shelf-changer">
@@ -36,7 +39,7 @@ export default class Book extends Component {
             </select>
           </div>
         </div>
-        <div className="book-title">{book.title}</div>
+        <div className="book-title">{book && book.title}</div>
         {book.authors &&
           book.authors.length &&
           book.authors.map(author => (
