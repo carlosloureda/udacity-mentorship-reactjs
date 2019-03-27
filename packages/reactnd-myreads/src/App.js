@@ -5,10 +5,12 @@ import SearchBooks from "./components/SearchBooks";
 
 import { Route } from "react-router-dom";
 import Swal from "sweetalert2";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
 import "./App.css";
 
 class BooksApp extends React.Component {
   state = {
+    isLoading: false,
     shelfs: {
       currentlyReading: [],
       wantToRead: [],
@@ -88,10 +90,12 @@ class BooksApp extends React.Component {
   };
 
   componentDidMount = () => {
+    this.setState({ isLoading: true });
     BooksAPI.getAll()
       .then(books => {
         /* We dont need a books object as they are on different shelfs */
         this.setState({
+          isLoading: false,
           shelfs: {
             currentlyReading: books.filter(
               book => book.shelf === "currentlyReading"
@@ -112,46 +116,49 @@ class BooksApp extends React.Component {
   };
 
   render() {
-    const { shelfs } = this.state;
+    const { shelfs, isLoading } = this.state;
     return (
       <div className="app">
         <Route
           exact
           path="/"
-          render={({ history }) => (
-            <div className="list-books">
-              <div className="list-books-title">
-                <h1>MyReads</h1>
-              </div>
-              <div className="list-books-content">
-                <div>
-                  <BookShelf
-                    books={shelfs.currentlyReading}
-                    shelfName="Currently Reading"
-                    onChangeShelf={this.onChangeShelf}
-                  />
-                  <BookShelf
-                    books={shelfs.wantToRead}
-                    shelfName="Want to Read"
-                    onChangeShelf={this.onChangeShelf}
-                  />
-                  <BookShelf
-                    books={shelfs.read}
-                    shelfName="Read"
-                    onChangeShelf={this.onChangeShelf}
-                  />
+          render={({ history, location }) => (
+            <React.Fragment>
+              <ProgressBar isLoading={isLoading} nKey={location.key} />
+              <div className="list-books">
+                <div className="list-books-title">
+                  <h1>MyReads</h1>
+                </div>
+                <div className="list-books-content">
+                  <div>
+                    <BookShelf
+                      books={shelfs.currentlyReading}
+                      shelfName="Currently Reading"
+                      onChangeShelf={this.onChangeShelf}
+                    />
+                    <BookShelf
+                      books={shelfs.wantToRead}
+                      shelfName="Want to Read"
+                      onChangeShelf={this.onChangeShelf}
+                    />
+                    <BookShelf
+                      books={shelfs.read}
+                      shelfName="Read"
+                      onChangeShelf={this.onChangeShelf}
+                    />
+                  </div>
+                </div>
+                <div className="open-search">
+                  <button
+                    onClick={() => {
+                      history.push("search");
+                    }}
+                  >
+                    Add a book
+                  </button>
                 </div>
               </div>
-              <div className="open-search">
-                <button
-                  onClick={() => {
-                    history.push("search");
-                  }}
-                >
-                  Add a book
-                </button>
-              </div>
-            </div>
+            </React.Fragment>
           )}
         />
         <Route

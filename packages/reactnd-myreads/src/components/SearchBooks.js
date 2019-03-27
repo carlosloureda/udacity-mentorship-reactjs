@@ -4,9 +4,11 @@ import Book from "./Book";
 import * as BooksAPI from "../utils/BooksAPI";
 import { withRouter } from "react-router";
 import Swal from "sweetalert2";
+import ProgressBar from "./ProgressBar/ProgressBar";
 
 class SearchBooks extends Component {
   state = {
+    isLoading: false,
     query: "",
     searchedBooks: []
   };
@@ -16,12 +18,14 @@ class SearchBooks extends Component {
 
   searchBooks = query => {
     if (!query) {
-      this.setState(state => ({ searchedBooks: [] }));
+      this.setState(state => ({ isLoading: false, searchedBooks: [] }));
       return;
     }
+    this.setState(state => ({ isLoading: true }));
     BooksAPI.search(query, null)
       .then(data => {
         this.setState(state => ({
+          isLoading: false,
           searchedBooks: !data || data.error ? [] : data
         }));
       })
@@ -46,6 +50,7 @@ class SearchBooks extends Component {
   render() {
     return (
       <div className="search-books">
+        <ProgressBar isLoading={this.state.isLoading} />
         <div className="search-books-bar">
           <button
             className="close-search"
@@ -57,13 +62,13 @@ class SearchBooks extends Component {
           </button>
           <div className="search-books-input-wrapper">
             {/*
-                    NOTES: The search from BooksAPI is limited to a particular set of search terms.
-                    You can find these search terms here:
-                    https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
+                NOTES: The search from BooksAPI is limited to a particular set of search terms.
+                You can find these search terms here:
+                https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
 
-                    However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-                    you don't find a specific author or title. Every search is limited by search terms.
-                  */}
+                However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
+                you don't find a specific author or title. Every search is limited by search terms.
+            */}
             <input
               type="text"
               placeholder="Search by title or author"
