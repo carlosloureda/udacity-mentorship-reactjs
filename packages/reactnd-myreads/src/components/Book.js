@@ -5,11 +5,11 @@ export default class Book extends Component {
   static propTypes = {
     /* The book object */
     book: PropTypes.object.isRequired,
-    onShelfChange: PropTypes.func.isRequired
+    onChangeShelf: PropTypes.func.isRequired
   };
 
   render() {
-    const { book, onShelfChange } = this.props;
+    const { book, onChangeShelf } = this.props;
     return (
       <div className="book">
         <div className="book-top">
@@ -23,10 +23,9 @@ export default class Book extends Component {
           />
           <div className="book-shelf-changer">
             <select
-              onChange={event => onShelfChange(event, book)}
+              onChange={event => onChangeShelf(event, book)}
               defaultValue={book.shelf}
             >
-              {/* <select onChange={(event) => this.props.onChangeShelf(event, book)} defaultValue={defaultShelf} value="wantToRead" */}
               <option value="move" disabled>
                 Move to...
               </option>
@@ -38,11 +37,13 @@ export default class Book extends Component {
           </div>
         </div>
         <div className="book-title">{book.title}</div>
-        {book.authors.map(author => (
-          <div key={author} className="book-authors">
-            {author}
-          </div>
-        ))}
+        {book.authors &&
+          book.authors.length &&
+          book.authors.map(author => (
+            <div key={author} className="book-authors">
+              {author}
+            </div>
+          ))}
       </div>
     );
   }

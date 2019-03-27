@@ -1,10 +1,12 @@
 import React from "react";
 import * as BooksAPI from "./utils/BooksAPI";
 import BookShelf from "./components/BookShelf";
+import SearchBooks from "./components/SearchBooks";
+
 import { Route } from "react-router-dom";
 import Swal from "sweetalert2";
-
 import "./App.css";
+
 class BooksApp extends React.Component {
   state = {
     shelfs: {
@@ -14,26 +16,28 @@ class BooksApp extends React.Component {
     }
   };
 
-  // Factory function to help onShelfChange
+  // Factory function to help onChangeShelf
   changeBookFromShelFactory = (shelf, book) => {
-    return currenState => {
-      let shelfMovedFrom = currenState.shelfs[book.shelf].filter(
+    console.log("the book to be added is: ", book);
+    return currentState => {
+      let shelfMovedFrom = currentState.shelfs[book.shelf].filter(
         bookInShelf => bookInShelf.id !== book.id
       );
       let shelfMovedTo =
-        shelf !== "none" ? currenState.shelfs[shelf].concat([book]) : null;
+        shelf !== "none" ? currentState.shelfs[shelf].concat([book]) : null;
 
       // if (revert) {
-      //   shelfMovedTo = currenState.shelfs[book.shelf].filter(
+      //   shelfMovedTo = currentState.shelfs[book.shelf].filter(
       //     bookInShelf => bookInShelf.id !== book.id
       //   );
-      //   shelfMovedFrom = currenState.shelfs[shelf].concat([book]);
+      //   shelfMovedFrom = currentState.shelfs[shelf].concat([book]);
       // }
       return {
+        ...currentState,
         shelfs: {
-          ...currenState.shelfs,
+          ...currentState.shelfs,
           [shelf]:
-            shelf !== shelfMovedTo ? shelfMovedTo : currenState.shelfs[shelf],
+            shelf !== shelfMovedTo ? shelfMovedTo : currentState.shelfs[shelf],
           [book.shelf]: shelfMovedFrom
         }
       };
@@ -41,9 +45,8 @@ class BooksApp extends React.Component {
   };
   // to avoid double editing ...
   shelfChangeRequestPending = false;
-  onShelfChange = (event, book) => {
+  onChangeShelf = (event, book) => {
     const shelfMovedTo = event.target.value;
-    console.log("shelfMovedTo: ", shelfMovedTo);
     if (shelfMovedTo !== book.shelf) {
       // TODO: make a better optimistic UI than 'oldState'
       let oldState = this.state;
@@ -56,12 +59,32 @@ class BooksApp extends React.Component {
       BooksAPI.update(book, shelfMovedTo)
         .then(() => (this.shelfChangeRequestPending = false))
         .catch(err => {
-          this.setState(
+          this.setState(currentState =>
             // this.changeBookFromShelFactory(shelfMovedTo, book, true)
-            { shelfs: oldState.shelfs }
+            ({ ...currentState, shelfs: oldState.shelfs })
           );
         });
     }
+  };
+
+  onAddToShelf = async (event, book) => {
+    const shelf = event.target.value;
+    book.shelf = shelf;
+    this.setState(currentState => ({
+      shelfs: {
+        ...currentState.shelfs,
+        [shelf]: currentState.shelfs[shelf].concat([book])
+      }
+    }));
+    await BooksAPI.update(book, shelf);
+
+    // .then(() => ()
+    // .catch(err => {
+    //   this.setState(currentState =>
+    //     // this.changeBookFromShelFactory(shelfMovedTo, book, true)
+    //     ({ ...currentState, shelfs: oldState.shelfs })
+    //   );
+    // });
   };
 
   componentDidMount = () => {
@@ -87,6 +110,7 @@ class BooksApp extends React.Component {
         })
       );
   };
+
   render() {
     const { shelfs } = this.state;
     return (
@@ -104,17 +128,17 @@ class BooksApp extends React.Component {
                   <BookShelf
                     books={shelfs.currentlyReading}
                     shelfName="Currently Reading"
-                    onShelfChange={this.onShelfChange}
+                    onChangeShelf={this.onChangeShelf}
                   />
                   <BookShelf
                     books={shelfs.wantToRead}
                     shelfName="Want to Read"
-                    onShelfChange={this.onShelfChange}
+                    onChangeShelf={this.onChangeShelf}
                   />
                   <BookShelf
                     books={shelfs.read}
                     shelfName="Read"
-                    onShelfChange={this.onShelfChange}
+                    onChangeShelf={this.onChangeShelf}
                   />
                 </div>
               </div>
@@ -133,32 +157,7 @@ class BooksApp extends React.Component {
         <Route
           path="/search"
           render={({ history }) => (
-            <div className="search-books">
-              <div className="search-books-bar">
-                <button
-                  className="close-search"
-                  onClick={() => {
-                    history.push("/");
-                  }}
-                >
-                  Close
-                </button>
-                <div className="search-books-input-wrapper">
-                  {/*
-                    NOTES: The search from BooksAPI is limited to a particular set of search terms.
-                    You can find these search terms here:
-                    https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-                    However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-                    you don't find a specific author or title. Every search is limited by search terms.
-                  */}
-                  <input type="text" placeholder="Search by title or author" />
-                </div>
-              </div>
-              <div className="search-books-results">
-                <ol className="books-grid" />
-              </div>
-            </div>
+            <SearchBooks onAddToShelf={this.onAddToShelf} />
           )}
         />
       </div>
