@@ -100,6 +100,11 @@ class App extends Component {
     );
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("5. shouldComponentUpdate, alternative: PureComponent");
+    return true;
+  }
+
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log(
       "6. getSnapshotBeforeUpdate (Needs to be defined with componentDidUpdate)"
