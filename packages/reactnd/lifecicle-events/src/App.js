@@ -88,6 +88,13 @@ class App extends Component {
     );
   }
 
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(
+      "6. getSnapshotBeforeUpdate (Needs to be defined with componentDidUpdate)"
+    );
+    return { snapshopVar: "a snapshop var" };
+  }
+
   componentWillUnmount() {
     console.log("8. componentWillUnmount");
   }
