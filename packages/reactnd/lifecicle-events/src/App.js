@@ -14,6 +14,18 @@ class App extends Component {
     };
   }
 
+  static getDerivedStateFromProps(props, state) {
+    // Update state so the next render will show the fallback UI.
+
+    console.log(
+      "1.5. static getDerivedStateFromProps props: ",
+      props,
+      " state: ",
+      state
+    );
+    return null;
+  }
+
   render() {
     console.log("2. Render method");
     return (
