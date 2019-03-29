@@ -10,6 +10,7 @@ class App extends Component {
       refreshView: false
     };
   }
+
   render() {
     console.log("2. Render method");
     return (
@@ -22,6 +23,9 @@ class App extends Component {
         </header>
       </div>
     );
+  }
+  componentDidMount() {
+    console.log("3. Component Did Mount");
   }
 }
 
