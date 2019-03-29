@@ -3,6 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log("1. Constructor called");
+    this.state = {
+      refreshView: false
+    };
+  }
   render() {
     console.log("2. Render method");
     return (
