@@ -20,12 +20,31 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                refreshView: !state.refreshView
+              }))
+            }
+          >
+            Reload view
+          </button>
         </header>
       </div>
     );
   }
   componentDidMount() {
     console.log("3. Component Did Mount");
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(
+      "4. componentDidUpdate: prevProps: ",
+      prevProps,
+      " prevState: ",
+      prevState,
+      " snapshot: ",
+      snapshot
+    );
   }
 }
 
