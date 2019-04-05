@@ -138,3 +138,15 @@ Here we go into the contacts app example so go to the `reactnd-contacts-md-1` br
 ## Project MyReads: A Booking Tracking App
 
 Project is [here](/packages/reactnd-myreads/README.md)
+
+## Webinars content
+
+### Webinar 1: React Dev Tools and lyfecycle events
+
+The code used at the webinar is located [here](/packages/reactnd/lifecycle-events)
+The video can be watched at [Youtube](https://www.youtube.com/watch?v=jTDn2UZYx0g&feature=youtu.be)
+
+### Webinar 2: Lifting state
+
+The code used at the webinar is located [here](/packages/reactnd/pagination-filter)
+The video can be watched at [Youtube](https://www.youtube.com/watch?v=jTDn2UZYx0g&feature=youtu.be)
