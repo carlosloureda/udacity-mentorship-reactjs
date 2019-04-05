@@ -16,14 +16,16 @@ lerna init
 See package [Asynchronous Javascript](/packages/asynchronous-js/README.md)
 
 ## [Client Server Communication - Udacity](https://classroom.udacity.com/nanodegrees/nd019/parts/a6fb0c7c-5ae4-4c2f-95b3-64052a6b825e)
+
 See package [Client Server Communication](/packages/client-server-communication/README.md)
 
-
 ## React Nanodegree
+
 React fundamentals from React Udacity Nanodegree
 
 ### React Fundamentals, [module 1](/packages/react-fundamentals-udacity/README.md)
 
+It has also the project app (My Reads project)
 
 ## Javascript chrome dev tools
 
