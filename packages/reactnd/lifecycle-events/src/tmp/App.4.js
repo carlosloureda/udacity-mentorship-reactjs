@@ -1,0 +1,51 @@
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log("1. Constructor called");
+    this.state = {
+      refreshView: false
+    };
+  }
+
+  render() {
+    console.log("2. Render method");
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                refreshView: !state.refreshView
+              }))
+            }
+          >
+            Reload view
+          </button>
+        </header>
+      </div>
+    );
+  }
+  componentDidMount() {
+    console.log("3. Component Did Mount");
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(
+      "4. componentDidUpdate: prevProps: ",
+      prevProps,
+      " prevState: ",
+      prevState,
+      " snapshot: ",
+      snapshot
+    );
+  }
+}
+
+export default App;
