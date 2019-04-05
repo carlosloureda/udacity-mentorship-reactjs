@@ -7,7 +7,8 @@
 - How data flows through the component
 
 ### What is composition ?
-From wikipedia  Composition = `to combine simple functions to build more complicated ones`.
+
+From wikipedia Composition = `to combine simple functions to build more complicated ones`.
 
 We will build functions with another functions, we will change from returning just values, to return some UI with React. So we will be able to begin to built litte independant pieces of code.
 
@@ -29,7 +30,7 @@ In React we will see that we use composition to build complex components:
 
 #### Dig deeper on compositions:
 
-* [Compose me That: Function Composition in Javascript](https://www.linkedin.com/pulse/compose-me-function-composition-javascript-kevin-greene/)
+- [Compose me That: Function Composition in Javascript](https://www.linkedin.com/pulse/compose-me-function-composition-javascript-kevin-greene/)
 
 . Function composition is a formalized way of thinking about something that is largely considered a good practice is software development, keep your functions short, single purpose and referentially transparent.
 
@@ -40,37 +41,37 @@ If you write a function and can't clearly describe what it is doing in a simple,
 
 See [example](./2-composition-tutorial/index.js)
 
-* [Functional JavaScript: Function Composition For Every Day Use](https://hackernoon.com/javascript-functional-composition-for-every-day-use-22421ef65a10)
-Remember that fucnction composition is part of the paradigm `functional programming`
+- [Functional JavaScript: Function Composition For Every Day Use](https://hackernoon.com/javascript-functional-composition-for-every-day-use-22421ef65a10)
+  Remember that fucnction composition is part of the paradigm `functional programming`
 
 If we see the typical online example for `function composition`
 
 ```javascript
-const add = x => y => x + y
-const multiply = x => y => x * y
-const add2Multiply3 = compose(multiply(3), add(2))
+const add = x => y => x + y;
+const multiply = x => y => x * y;
+const add2Multiply3 = compose(
+  multiply(3),
+  add(2)
+);
 ```
+
 This is an ugly example, because, in what ways is this better than: ?
 
-
 ```javascript
-const value = (x + 2) * 3
+const value = (x + 2) * 3;
 ```
 
 It has its benefits but is very difficult to see that in this example.
 
-
 `A composable function should have 1 input argument and 1 output value.`
-
 
 You can turn any function into a composable function by currying the function.
 
 Let's see an example with HTML:
 
 ```js
-const tag = t => contents => `<${t}>${contents}</${t}>`
-tag('b')('this is bold!')
-> <b>this is bold!</b>
+const tag = t => contents => `<${t}>${contents}</${t}>`;
+tag("b")("this is bold!") > <b>this is bold!</b>;
 ```
 
 If you want a bettet example you have it [here](./3-functional-javascript/tag.js).
@@ -101,7 +102,6 @@ You will achieve the highest level of code reuse with function composition.
 making our code reusable should always be one of our goals.
 My next article will be about composing asynchronous functions. I thought I could fit it all into a single article, but this page got long quickly. So let’s just stop it here. Subscribe so you do not miss out on Part 2!
 
-
 ### Declarative Code
 
 Imperative code from the dictionary means: `expressing a command; commanding`.
@@ -116,6 +116,7 @@ For example, in:
 ```jsx
 <button onClick={activateTeleporter}>Activate Teleporter</button>
 ```
+
 We don't declare a `.addEventListener()` we just say that we want to run the `activateTeleporter` function to run when the button is clicked.
 
 #### Further research
@@ -124,10 +125,10 @@ We don't declare a `.addEventListener()` we just say that we want to run the `ac
 
 - [Difference between declarative and imperative in React.js? from StackOverflow](https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js)
 
-
 ## Rendering UI with React
 
-Here we go into the contacts app example so go to the `reactnd-contacts-md-1` branch
+Here we go into the contacts app example so go to the `reactnd-contacts-md-1` branch, and this [README](/packages/reactnd-contacts-app/server/README.md)
+
 ## State management
 
 ## Rendering UI with External Data
@@ -135,3 +136,5 @@ Here we go into the contacts app example so go to the `reactnd-contacts-md-1` br
 ## Managing App Location with React Router
 
 ## Project MyReads: A Booking Tracking App
+
+Project is [here](/packages/reactnd-myreads/README.md)
