@@ -53,6 +53,23 @@ function todos(state = [], action) {
   }
 }
 
+function goals(state = [], action) {
+  switch (action.type) {
+    case "ADD_GOAL":
+      return state.concat([action.goal]);
+    case "REMOVE_GOAL":
+      return state.filter(goal => goal.id !== action.id);
+    default:
+      return state;
+  }
+}
+function app(state = {}, action) {
+  return {
+    todos: todos(state.todos, action),
+    goals: goals(state.goals, action)
+  };
+}
+
 const store = createStore(todos);
 const unsubscribe = store.subscribe(() => {
   console.log("The new state is: ", store.getState());
