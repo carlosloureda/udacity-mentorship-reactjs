@@ -1,0 +1,21 @@
+:helicóptero: And some tips on getting help and asking questions :helicóptero:
+
+:mano_alzada::tono_de_piel-3: *Ask lots of questions* :mano_alzada::tono_de_piel-3:
+First of all, please ask questions! That is what this slack channel is here for and while you might feel uncertain about whether you should ask the question, quite likely there's someone else thinking the same thing and you asking can help them as well.
+
+:mano_escribiendo::tono_de_piel-3: *Provide details on the situation* :mano_escribiendo::tono_de_piel-3:
+When you're asking questions about course content, it's helpful if you can reference the lesson and section that you are in so that it is easy to find exactly where you are at.
+
+Also, please do explain what you've tried so far, and, if you are getting an error message, the code that you used that is causing the error, as well as the last few lines of the error message (sometimes you'll have to scroll down) that says something like `ValueError: Error message here.` This helps in answering your question as quickly as possible.
+
+:tijeras: *Post code snippets rather than whole sections* :tijeras:
+When posting code, do try to just post snippets, rather than all of your code, especially if the code is for one of the projects. We want to encourage learning, and avoid possibilities of copying long sections of code from someone else. (You can check the "housekeeping" post for one of the ways to add code snippets in Slack)
+
+:mega: *The main channel is the best place to ask questions* :mega:
+While it is possible to direct message (dm) me as your mentor, or anyone else, when it comes to asking questions, I would strongly encourage you to post in the main channel. The reason for this is that then everyone else can see the discussion and hopefully learn from it as well. If you are feeling very uncertain, it is possible to dm me, but sometimes I will direct you back to asking in the main channel so that we can have the discussion there.
+
+:cara_pensativa: *Expect to get asked questions and receive suggestions and tips to your questions* :cara_pensativa:
+When responding to questions, some of the things that I will do are to ask you what you've done so far, ask you questions about what you are trying to achieve, give you suggestions of approaches rather than providing exact code, and recommend search suggestions for what you might look up. The reason for this is not to avoid giving you the answer, but to do what I can to help you develop skills in how to learn. Figuring out how to read documentation, review answers on places like StackOverflow, and create effective search terms is all part of the skills that you need to develop to be a strong data analyst (and this is what everyone else does ALL THE TIME! :cara_ligeramente_sonriente: )
+
+:cara_abrazando: *Help each other out* :cara_abrazando:
+Finally, I want to encourage you to not just wait for me to respond to questions. If you see someone asking a question that you know the answer to, please feel free to jump in and respond. Helping others and explaining concepts that I've been learning is something that I have found greatly enhances my own learning! I'll be reviewing posts and responding to them, but I'd love to hear from all of you as well.

@@ -1,0 +1,10 @@
+- Create a form for the students to fill it:
+    - the link to the new survey to get to know them better is here: https://docs.google.com/forms/d/e/1FAIpQLSetKY520FHgsu27MgnFQFFsjqs4tAI_3jiXgQi48hun07pNrA/viewform?usp=sf_link
+- Create a survey form for the students to tell me some feedback
+    - Teh link for the survey is: https://docs.google.com/forms/d/e/1FAIpQLSfHxRRFr0fLvzltmsY-JfPq7_1UbTgmr2d6SVJZgc3IWFOepg/viewform?usp=sf_link
+
+- Create React channel messages with the important info for the students, create pdf with everything?
+
+    - Just wrote Akshay
+
+- Write every student with the different cases:
