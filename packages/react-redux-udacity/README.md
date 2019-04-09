@@ -127,7 +127,29 @@ You’ll learn to create custom middleware and add it to your Redux store. This 
 We've seen the Store, Actions and the reducers, yeah! The Middleware will let us hook into lifecycle events.
 
 Feature: If the todo app has a bitcoin word tell that that is a bad idea, Tyler introduces the concept: checkAndDispatch(), but we had to change the code of our app, with Middleware
-we would be able to add this kind of behaviour without changing the app code
+we would be able to add this kind of behaviour without changing the app code:
+
+```
+…a third-party extension point between dispatching an action, and the moment it reaches the reducer.
+```
+
+What's great about middleware is that once it receives the action, it can carry out a number of operations, including:
+
+- producing a side effect (e.g., logging information about the store)
+- processing the action itself (e.g., making an asynchronous HTTP request)
+- redirecting the action (e.g., to another piece of middleware)
+- dispatching supplementary actions
+
+Now we just can apply our new `checker` app with a 2nd argument to the createStore:
+
+```
+const store = Redux.createStore(
+  Redux.combineReducers({
+    todos,
+    goals
+  }), Redux.applyMiddleware(checker)
+);
+```
 
 ## Lesson 4: Redux with React (2h 30min)
 
