@@ -151,6 +151,16 @@ const store = Redux.createStore(
 );
 ```
 
+Redux middleware leverages a concept called higher-order functions. A higher-order function is a function that either:
+
+- accepts a function as an argument
+- returns a function
+
+We will add the `logger`
+
+More docs: https://redux.js.org/advanced/middleware
+https://redux.js.org/api/applymiddleware
+
 ## Lesson 4: Redux with React (2h 30min)
 
 You’ll learn how to add React to a Redux application and have the state of that application be managed by Redux.
