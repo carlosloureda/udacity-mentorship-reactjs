@@ -5,6 +5,5 @@
 
 - Create React channel messages with the important info for the students, create pdf with everything?
 
-    - Just wrote Akshay
 
 - Write every student with the different cases:

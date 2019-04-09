@@ -124,6 +124,11 @@ You’ll learn to move away from having state live in the DOM by creating a vani
 
 You’ll learn to create custom middleware and add it to your Redux store. This middleware will allow you to enhance your store by hooking into and intercepting actions before they reach any reducers.
 
+We've seen the Store, Actions and the reducers, yeah! The Middleware will let us hook into lifecycle events.
+
+Feature: If the todo app has a bitcoin word tell that that is a bad idea, Tyler introduces the concept: checkAndDispatch(), but we had to change the code of our app, with Middleware
+we would be able to add this kind of behaviour without changing the app code
+
 ## Lesson 4: Redux with React (2h 30min)
 
 You’ll learn how to add React to a Redux application and have the state of that application be managed by Redux.
