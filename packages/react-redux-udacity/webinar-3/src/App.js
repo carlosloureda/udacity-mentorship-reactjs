@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import HelloWorld from "./HelloWorld";
-import reducer from "./reducers";
-import { createStore } from "redux";
+import ButtonGroup from "./ButtonGroup";
 
-const initialState = { name: "Everyone" };
-const store = createStore(reducer, initialState); // an incomplete solution
-
+import { store } from "./store";
 class App extends Component {
   render() {
     const state = store.getState();
-    return <HelloWorld name={state.name} />;
+    return [
+      <HelloWorld key={1} name={state.name} />,
+      <ButtonGroup key={2} names={["Everyone", "Carlos", "from Redux"]} />
+    ];
   }
 }
 

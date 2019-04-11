@@ -75,3 +75,28 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
             type: " ",
             payload: {}
         }
+    - Add styling and buttons
+    - Since we intend to update the state of the application, whenever any of the buttons
+        is clicked, we must dispatch an action.
+    -  We have 3 names:
+        {
+            type: "SET_NAME",
+            text: "Everyone"
+        }
+        {
+            type: "SET_NAME",
+            text: "Carlos"
+        }
+        {
+            type: "SET_NAME",
+            text: "from Redux"
+        }
+        We are repeating a lot of code (against DRY!), so we can simplify with some action creators.
+
+        const setName = text => ({type: "SET_NAME", name: text})
+
+        > Create the /src/actions/index.js
+        > Create the /src/store/index.js
+        > Moved buttons to a new component
+        > Added the action creator inside the /src/actions
+        > Added action 2nd argument to the /src/reducers and log the action
