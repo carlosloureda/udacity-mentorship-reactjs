@@ -63,3 +63,15 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
         argument passed into the createStore function call.
         - Store.getState() will return the current state of your application.
         Where Store is a valid Redux STORE.
+
+> Let's add some Actions!
+
+    - Let's change the name -> Need to tell the CASHIER our WITHDRAWAL_MONEY action.
+      Is the store who dispatches the actions.
+
+    - Describe an action:
+
+        {
+            type: " ",
+            payload: {}
+        }
