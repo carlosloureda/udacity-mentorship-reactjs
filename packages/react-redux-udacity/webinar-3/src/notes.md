@@ -32,3 +32,10 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
             export default state => {
                 return state;
             };
+    - 2nd argument for createStore ??
+        - First time in the bank you created a bank account, maybe with an initial deposit or not.
+
+            In Redux terms, this is called the initialState of the app.
+            Thinking in code, initialState is the second argument passed into the
+            createStore function call.
+            const store = createStore(reducer, initialState);
