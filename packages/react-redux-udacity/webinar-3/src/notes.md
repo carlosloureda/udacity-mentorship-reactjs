@@ -39,3 +39,9 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
             Thinking in code, initialState is the second argument passed into the
             createStore function call.
             const store = createStore(reducer, initialState);
+
+    - Remove the state and the this.state.name
+        - The createStore gives as the getState method.
+        - In our case, store.getState() will return the object, { name: "Everyone"} since
+            this is the INITIAL STATE we passed into the createStore() method when we
+            created the STORE.

@@ -7,11 +7,9 @@ const initialState = { name: "Everyone" };
 const store = createStore(reducer, initialState); // an incomplete solution
 
 class App extends Component {
-  state = {
-    name: "Carlos"
-  };
   render() {
-    return <HelloWorld name={this.state.name} />;
+    const state = store.getState();
+    return <HelloWorld name={state.name} />;
   }
 }
 
