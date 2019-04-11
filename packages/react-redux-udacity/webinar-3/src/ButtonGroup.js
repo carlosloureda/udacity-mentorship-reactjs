@@ -2,7 +2,6 @@ import React from "react";
 import { store } from "./store";
 import { setName } from "./actions";
 
-import { from } from "rxjs";
 const ButtonGroup = ({ names }) => (
   <div className="btn-group">
     {names.map((name, i) => (

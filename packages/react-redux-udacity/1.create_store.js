@@ -1,15 +1,6 @@
 // Library Code
 
 function createStore(reducer) {
-  // 1. The state
-  // 2. Get the state
-  // 3. Listen to changes on the state
-  // 4. Update the state:
-  /*
-            - Only an event (actions) can change the state of the store.
-            - The function that returns the new state needs to be a pure function.
-        */
-
   let state;
   let listeners = [];
 

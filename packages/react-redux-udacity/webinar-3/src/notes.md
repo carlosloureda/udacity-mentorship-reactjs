@@ -100,3 +100,13 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
         > Moved buttons to a new component
         > Added the action creator inside the /src/actions
         > Added action 2nd argument to the /src/reducers and log the action
+
+    - Nothig works as imagened as the reducer just returns the same state.
+
+        > action: {type: "@@redux/INITn.2.y.a.e.a"}
+
+            Well, do not concern yourself so much about that. It is an action passed by Redux itself when setting up your app. It is usually called the Redux init action, and it is
+            passed into the reducer when Redux initialises your application with the initial state of the app.
+        > Create reducer
+            - We see that on console the state changes .. but not in the view
+    -
