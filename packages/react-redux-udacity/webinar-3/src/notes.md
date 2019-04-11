@@ -45,3 +45,21 @@ Module 2. Redux. Webinar 3. Hello World Example. Added base code
         - In our case, store.getState() will return the object, { name: "Everyone"} since
             this is the INITIAL STATE we passed into the createStore() method when we
             created the STORE.
+
+> Conclusion and Summary
+
+        This chapter has been exciting. We focused mostly on setting a decent foundation
+        for the more interesting things to come.
+        Here are a few things you learned in this chapter:
+        - Redux is a predictable state container for JavaScript apps.
+        - The createStore factory function from Redux is used to create a
+        Redux STORE
+        - The Reducer is the only mandatory argument passed into
+        createStore()
+        - A REDUCER is just a function. A function that takes in two parameters.
+        The first being the STATE of the app, and the other being an ACTION
+        - A Reducer always returns the NEW STATE of your application.
+        - The INITIAL STATE of your application, initialState is the second
+        argument passed into the createStore function call.
+        - Store.getState() will return the current state of your application.
+        Where Store is a valid Redux STORE.
