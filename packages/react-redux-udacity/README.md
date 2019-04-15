@@ -164,6 +164,8 @@ https://redux.js.org/api/applymiddleware
 ## Lesson 4: Redux with React (2h 30min)
 
 You’ll learn how to add React to a Redux application and have the state of that application be managed by Redux.
+We will convert the `index.html` file a React app using Redux. Hurrai!. Remember to go to the the [todos](./todos/index.html)
+Begin by importing the scripts for React, ReactDOM and Babel. And add a new babel script with the scheleton of the classes.
 
 ## Lesson 5: Asynchronous Redux (2h 30min)
 
