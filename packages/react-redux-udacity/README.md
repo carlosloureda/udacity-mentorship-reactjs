@@ -190,6 +190,19 @@ Out of the box, the Redux store can only support the synchronous flow of data. M
 
 Without thunks, synchronous dispatches are the default. We could still make API calls from React components (e.g., using the componentDidMount() lifecycle method to make these requests) -- but using thunk middleware gives us a cleaner separation of concerns. Components don't need to handle what happens after an asynchronous call, since API logic is moved away from components to action creators. This also lends itself to greater predictability, since action creators will become the source of every change in state. With thunks, we can dispatch an action only when the server request is resolved!
 
+More Asynchronous Options
+The most common requests I get for this course are around more advanced data-fetching topics with Redux. I've resisted because typically they bring in a lot of complexity, while the benefits aren't seen until your data-fetching needs become large enough. With that said, now that you have a solid foundation on Redux and specifically, asynchronous Redux, you'll be in a good position to read up on the different options to decide if any would work best for the type of application you're working on. I encourage to read up on both of the other (popular) options.
+
+[Redux Promise](https://github.com/redux-utilities/redux-promise) - FSA-compliant promise middleware for Redux.
+[Redux Saga](https://github.com/redux-saga/redux-saga) - An alternative side effect model for Redux apps
+
+Lesson Challenge
+Read these articles: [Redux Thunk](https://blog.nojaf.com/2015/12/06/redux-thunk/), [Why do we need middleware for async flow in Redux?](https://stackoverflow.com/questions/34570758/why-do-we-need-middleware-for-async-flow-in-redux), and [Understanding how redux-thunk works](https://medium.com/@gethylgeorge/understanding-how-redux-thunk-works-72de3bdebc50). Answer the following questions and share your answers with your classmates:
+
+1. Why do we use middleware to perform asynchronous tasks in Redux apps?
+
+2. How do we use redux-thunk to make API requests in Redux apps?
+
 ## Lesson 6: react-redux (2h)
 
 You’ll learn to leverage the react-redux bindings in order to leverage the benefits of a UI library like React and a state management library like Redux.
