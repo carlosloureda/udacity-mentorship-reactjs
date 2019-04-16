@@ -181,6 +181,15 @@ You’ll learn to better abstract asynchronous events by creating your own custo
 store.
 We are going to add our data to an external API.
 
+Thunk --> We have fetching data inside the component instead of just showing data.
+Remember that middleware sits between the dispatching of an action, and the running of the reducer.
+
+For this to work we neeed to add the redux-thunk library in the following video, so you'll need this
+
+Out of the box, the Redux store can only support the synchronous flow of data. Middleware like thunk helps support asynchronicity in a Redux application. You can think of thunk as a wrapper for the store’s dispatch() method; rather than returning action objects, we can use thunk action creators to dispatch functions (or even or Promises).
+
+Without thunks, synchronous dispatches are the default. We could still make API calls from React components (e.g., using the componentDidMount() lifecycle method to make these requests) -- but using thunk middleware gives us a cleaner separation of concerns. Components don't need to handle what happens after an asynchronous call, since API logic is moved away from components to action creators. This also lends itself to greater predictability, since action creators will become the source of every change in state. With thunks, we can dispatch an action only when the server request is resolved!
+
 ## Lesson 6: react-redux (2h)
 
 You’ll learn to leverage the react-redux bindings in order to leverage the benefits of a UI library like React and a state management library like Redux.
