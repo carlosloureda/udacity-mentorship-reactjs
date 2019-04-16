@@ -167,9 +167,19 @@ You’ll learn how to add React to a Redux application and have the state of tha
 We will convert the `index.html` file a React app using Redux. Hurrai!. Remember to go to the the [todos](./todos/index.html)
 Begin by importing the scripts for React, ReactDOM and Babel. And add a new babel script with the scheleton of the classes.
 
+- Lesson Challenge
+
+Read these articles: [Component State](https://medium.com/netscape/component-state-vs-redux-store-1eb0c929277) vs [Redux Store and React + Redux Architecture : Separation of Concerns](https://medium.freecodecamp.org/react-redux-architecture-part-1-separation-of-concerns-812da3b08b46). Answer the following questions and share your answers with your classmates:
+
+1. Explain how React interplays with Redux.
+
+2. Give an example that illustrates the Separation of Concerns Principle.
+
 ## Lesson 5: Asynchronous Redux (2h 30min)
 
-You’ll learn to better abstract asynchronous events by creating your own custom Thunk middleware and adding it to your store.
+You’ll learn to better abstract asynchronous events by creating your own custom Thunk middleware and adding it to your
+store.
+We are going to add our data to an external API.
 
 ## Lesson 6: react-redux (2h)
 
