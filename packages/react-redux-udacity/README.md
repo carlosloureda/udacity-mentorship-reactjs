@@ -207,6 +207,13 @@ Read these articles: [Redux Thunk](https://blog.nojaf.com/2015/12/06/redux-thunk
 
 You’ll learn to leverage the react-redux bindings in order to leverage the benefits of a UI library like React and a state management library like Redux.
 
+We want to connect Redux with React:
+
+1. Improve the way how each component gets access to the store.
+
+- Instead of retreiving store changes on the root component better to retreive them on the components, so in that way components scale better.
+  Context API comes to the rescue.
+
 ## Lesson 7: Real World Redux (7h 30min)
 
 You’ll take your knowledge of Redux and utilize it by building a real world Redux application. You’ll also learn advanced Redux topics like reducer composition and normalization.
