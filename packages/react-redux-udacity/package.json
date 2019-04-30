@@ -2,5 +2,11 @@
   "name": "react-redux-udacity",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "goals-todos-api": "^1.0.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
 }

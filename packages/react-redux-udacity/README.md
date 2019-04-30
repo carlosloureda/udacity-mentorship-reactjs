@@ -218,6 +218,16 @@ We want to connect Redux with React:
 3. Create HOC connect
 4. Add react-redux
 
+Folder structure:
+We will refactor our unique index.html file into a componented structure.
+We create a new project `react-todos-goals`.
+I will add this libraries:
+
+- goals-todos-api
+- redux
+- react-redux
+- redux-thunk
+
 ## Lesson 7: Real World Redux (7h 30min)
 
 You’ll take your knowledge of Redux and utilize it by building a real world Redux application. You’ll also learn advanced Redux topics like reducer composition and normalization.
