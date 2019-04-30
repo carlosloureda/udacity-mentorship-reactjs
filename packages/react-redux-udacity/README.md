@@ -214,6 +214,10 @@ We want to connect Redux with React:
 - Instead of retreiving store changes on the root component better to retreive them on the components, so in that way components scale better.
   Context API comes to the rescue.
 
+2. Create Connected Components
+3. Create HOC connect
+4. Add react-redux
+
 ## Lesson 7: Real World Redux (7h 30min)
 
 You’ll take your knowledge of Redux and utilize it by building a real world Redux application. You’ll also learn advanced Redux topics like reducer composition and normalization.
